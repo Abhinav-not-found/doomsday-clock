@@ -2,6 +2,8 @@ function selector(id){
   return document.getElementById(id)
 }
 
+let tickSound = selector('tickSound')
+
 // clock hands
 let secondHand = selector('second')
 let minHand = selector('minute')
@@ -32,6 +34,10 @@ function updateTime(){
   hourHand.style.transform = `rotate(${hourDeg}deg)`
   minHand.style.transform = `rotate(${minDeg}deg)`
   secondHand.style.transform = `rotate(${secDeg}deg)`
+
+
+  tickSound.currentTime = 0
+  tickSound.play()
 }
 
 // Run every second
